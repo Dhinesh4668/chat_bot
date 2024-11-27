@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "174133860856",
+    "project_id": "helpyy-c7509",
+    "storage_bucket": "helpyy-c7509.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174133860856:android:8c95b9b48548080c001e0d",
+        "android_client_info": {
+          "package_name": "com.helpyy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174133860856-vjrt8m1rtjhmpoiqr9ujhfsun8ghgqa4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.helpyy",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "174133860856-rio74opmmmq5jhqdlaaedmlrojlnjk3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiiiGjdV4TJX5XZnI4XOz-_lApk8z1sDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174133860856-rio74opmmmq5jhqdlaaedmlrojlnjk3q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
