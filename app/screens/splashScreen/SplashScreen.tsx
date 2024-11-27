@@ -1,5 +1,6 @@
 import React from "react";
 import {View, Text, StyleSheet, StatusBar} from 'react-native';
+import { fontSize } from "../../utils/theme";
 
 const SplashScreen = () :React.JSX.Element => {
     return (
@@ -7,7 +8,7 @@ const SplashScreen = () :React.JSX.Element => {
           flex: 1,
       }]}>
           <Text style={styles.text}>Helpyy</Text>
-          <StatusBar barStyle={'dark-content'} backgroundColor={"white"} />
+            <StatusBar barStyle={'dark-content'} backgroundColor={"black"} />
       </View>
     );
 };
@@ -17,12 +18,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         display: 'flex',
-        backgroundColor: "white",
+        backgroundColor: "black",
 
     },
     text: {
-        fontSize: 18,
+        fontSize: fontSize.big + 35,
         textAlign: 'center',
+        color: "white",
+        fontWeight: "600"
     },
 });
 
