@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Set up the environment
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
@@ -24,15 +25,23 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install Dependencies
+      - name: Install Node.js Dependencies
         run: npm install
 
+      - name: Install Android Dependencies
+        run: |
+          yes | sdkmanager --licenses
+          sdkmanager "platforms;android-33" "build-tools;33.0.0" "platform-tools"
+
+      # Build APK
       - name: Make Gradle Wrapper Executable
         run: chmod +x android/gradlew
 
-      - name: Build with Gradle
+      - name: Build Release APK
         run: android/gradlew assembleRelease
+        working-directory: android
 
+      # Upload APK
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
