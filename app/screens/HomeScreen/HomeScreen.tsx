@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import {
     FlatList,
@@ -99,7 +101,6 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.cardTitle}>{item.title}</Text>
             {/* Subtitle */}
             <Text style={styles.cardSubtitle}>{item.generated}</Text>
-
             {/* Link */}
             <Pressable style={styles.cardLink}>
                 <Text style={styles.cardLinkText}>Use this prompt</Text>
@@ -111,19 +112,20 @@ const HomeScreen = ({ navigation }) => {
         <SafeAreaView style={styles.container}>
             <View style={styles.innerContainer}>
                 {/* Profile */}
-                <View style={{
+                <Pressable onPress={() => {
+                    navigation.navigate("profile")
+                }} style={{
                     flexDirection: 'row',
                     gap: 10,
                     alignItems: 'center',
                     // justifyContent: "center",
                     display: "flex",
-
                 }}>
-                    {user === null ?
-                        <View style={styles.profileContainer}></View>
-                        :
-                        <Image source={{ uri: user?.data?.user?.photo }} style={styles.profileContainer} />}
-                </View>
+                    {user === null ? (
+                        <View style={styles.profileContainer}></View>)
+                        : (
+                            <Image source={{ uri: user?.data?.user?.photo }} style={styles.profileContainer} />)}
+                </Pressable>
 
                 {/* Greeting */}
                 <View style={styles.greetContainer}>

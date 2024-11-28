@@ -5,6 +5,7 @@ import { colors, fontSize } from '../../utils/theme';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { CommonActions } from '@react-navigation/native';
 
 
 // Configure Google Sign-In
@@ -55,7 +56,12 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
                 ToastAndroid.show("Login successfully !", ToastAndroid.BOTTOM);
             }
 
-            navigation.navigate('main');
+            navigation.dispatch(
+                CommonActions.reset({
+                    index: 0,
+                    routes: [{ name: "main" }]
+                })
+            );
         } catch (error) {
             console.error('Google Sign-In Error:', error.message, error);
         }
